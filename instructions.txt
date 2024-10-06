@@ -1,0 +1,94 @@
+
+Secure Task Management Application - Instructions
+
+Overview
+This is a secure task management application built with a Node.js backend (Express) and a Vue.js frontend.
+The application allows users to register, log in, and manage tasks with full CRUD operations.
+It includes features like user authentication, JWT-based session management, token refreshing, and secure data handling.
+
+Prerequisites
+Ensure that you have the following installed on your machine:
+
+Node.js (v14.x or later)
+npm (Node Package Manager)
+Vue CLI (for Vue.js setup)
+
+Setup Instructions
+
+1. Clone the Repository
+git clone git@github.com:hochstadt7/AssembrixTaskManagment.git
+cd AssembrixTaskManagment
+
+2. From the root directory of the project, install the necessary packages:
+npm install
+
+3. Environment Variables
+Create a .env file in the root directory and add the following environment variables:
+JWT_SECRET=your_jwt_secret_key
+PORT=3000
+
+JWT_SECRET: Replace your_jwt_secret_key with a secure random string. This is used for signing JWT tokens.
+PORT: The port number on which the backend server will run.
+
+4. HTTPS Setup
+The application requires SSL/TLS certificates to run securely over HTTPS. You need to generate server.cert and server.key files before running the app.
+Generating SSL/TLS Certificates:
+You can generate a self-signed certificate for development purposes using the following command:
+openssl req -nodes -new -x509 -keyout server.key -out server.cert -days 365
+Follow the prompts to fill in the certificate information.
+Place the generated server.cert and server.key files in the root directory of the project.
+
+5. Run the Backend Server
+node index.js
+The backend server should now be running at https://localhost:3000
+(3000 is the default port, you can set it in your .env file).
+
+6. Frontend Setup (Vue.js)
+
+6.1 Navigate to the frontend directory (with a seperate terminal)
+and install the necessary packages:
+cd frontend
+npm install
+
+6.2. Run the Frontend Development Server
+Start the Vue.js development server:
+npm run serve
+The frontend server should now be running at https://localhost:8080
+(8080 is the default port).
+
+
+7. Usage Instructions
+
+7.1. Register Page
+Navigate to https://localhost:8080/register in your browser.
+If you face a warning "Your connection is not private" you may:
+1. Click on the "Advanced" button at the bottom of the warning message.
+2. click on "Proceed to localhost". This will allow you to continue to the site despite the security warning.
+Fill in your desired username and password and submit the form.
+If the registration is successful, you will be automatically logged in and redirected to the tasks page.
+
+7.2. Login Page
+in the login page, you can fill in your username and password
+if you haven't already registered before.
+
+7.3. Manage Tasks Page
+Once logged in, you can create, edit, delete, and view tasks.
+Each task consists of a title and description.
+
+
+8. Troubleshooting
+
+8.1 400 Bad Request during Registration: Ensure that your username and password meet the validation criteria.
+The username should be between 3 and 30 characters, and the password should be at least 8 characters long.
+
+8.2 400 Bad Request during creation/editing of a task: Ensure that your task's title meet the validation criteria.
+The title should be between 1 and 100 charaters.
+
+
+9. Stopping the Application
+
+9.1. Stop the Backend Server
+To stop the backend server, press Ctrl + C in the terminal where it's running.
+
+9.2. Stop the Frontend Development Server
+To stop the frontend development server, press Ctrl + C in the terminal where it's running.
