@@ -16,8 +16,8 @@ Vue CLI (for Vue.js setup)
 Setup Instructions
 
 1. Clone the Repository
-git clone git@github.com:hochstadt7/AssembrixTaskManagment.git
-cd AssembrixTaskManagment
+git clone git@github.com:hochstadt7/TaskManagment.git
+cd TaskManagment
 
 2. From the root directory of the project, install the necessary packages:
 npm install
