@@ -1,1 +1,1 @@
-Details are in the instructions.txt file.
+Details are provided in the instructions.txt file.
